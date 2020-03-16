@@ -16,5 +16,41 @@ namespace Assignment_2
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ContextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            //Declare resistor values
+            double Resistor1, Resistor2;
+
+            //Read values from textboxes
+            try
+            {
+                Resistor1 = double.Parse(textBox1.Text);
+                Resistor2 = double.Parse(textBox2.Text);
+            }
+
+            catch
+            { 
+               MessageBox.Show("Type a number in both resistor boxes!");
+               Resistor1 = 0.0;
+               Resistor2 = 0.0;
+            }
+
+            //Calculate the total resistance
+            double Resistance = Resistor1 + Resistor2 ;
+
+            //Display total resistance
+            label1.Text = " Total resistance = " + Resistance + " Ohms";
+        }
     }
 }
