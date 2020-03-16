@@ -52,5 +52,30 @@ namespace Assignment_2
             //Display total resistance
             label1.Text = " Total resistance = " + Resistance + " Ohms";
         }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            //Delare resistor values
+            double Resistor1, Resistor2;
+
+            //Read each textbox value
+            try
+            {
+                Resistor1 = double.Parse(textBox3.Text);
+                Resistor2 = double.Parse(textBox4.Text);
+            }
+             catch
+            {
+                MessageBox.Show("Type a number in both resitor textboxes");
+                Resistor1 = 0.0;
+                Resistor2 = 0.0;
+            }
+
+            //Calculate the total resistance
+            double resistance = 1 / 1 / Resistor1 + 1 / Resistor2; 
+
+            //Display the total resistance
+            label2
+        }
     }
 }
